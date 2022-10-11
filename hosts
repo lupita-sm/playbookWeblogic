@@ -5,6 +5,6 @@ weblogic ansible_ssh_host=192.168.56.14 ansible_ssh_port=22
 servidor_pruebas ansible_ssh_host=158.98.60.49 
 
 [pruebas:vars]
-ansible_ssh_port=9006 
-ansible_ssh_user=root 
-ansible_ssh_password=ibm33.ibm33
+ansible_user=root
+ansible_password=ibm33.ibm33
+ansible_port=9006
