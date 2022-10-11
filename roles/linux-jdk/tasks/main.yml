@@ -9,7 +9,8 @@
   #yum:
   #  name: /opt/jdk-19_linux-x64_bin.rpm
   #  state: present
-  command: rpm -ivh /opt/jdk-19_linux-x64_bin.rpm
+  ansible.builtin.shell: rpm -ivh /opt/jdk-19_linux-x64_bin.rpm
+  #command: rpm -ivh /opt/jdk-19_linux-x64_bin.rpm
 
 #- name: Unarchive tar file
 #  shell: 
