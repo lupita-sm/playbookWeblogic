@@ -1,1 +1,3 @@
+[web]
 weblogic ansible_ssh_host=192.168.56.14 ansible_ssh_port=22
+servidor_pruebas ansible_ssh_host=158.98.60.49 ansible_ssh_port=9006 
