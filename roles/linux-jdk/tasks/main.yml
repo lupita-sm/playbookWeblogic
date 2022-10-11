@@ -1,19 +1,15 @@
 ---
 # tasks file for linux-jdk
 - name: Download jdk linux
-  get_url: url="https://download.oracle.com/java/19/latest/jdk-19_linux-x64_bin.tar.gz" dest="/etc/jdk-19_linux-x64_bin.tar.gz"
+  get_url: url="https://download.oracle.com/java/19/latest/jdk-19_linux-x64_bin.rpm" dest="/"
   when: ansible_os_family == "Linux"
 
-- name: Ensure jdk directory exists
-  file: name=/etc/jdk/ state=directory
-  #when: ansible_os_family == "Linux"
-
-- name: Unarchive tar file
-  shell: 
-    cmd: 'tar -xvf /etc/jdk-19_linux-x64_bin.tar.gz'
-    chdir: '/etc/jdk/'
-    warn: false
-  when: ansible_os_family == "Linux"
+#- name: Unarchive tar file
+#  shell: 
+#    cmd: 'tar -xvf /etc/jdk-19_linux-x64_bin.tar.gz'
+#    chdir: '/etc/jdk/'
+#    warn: false
+#  when: ansible_os_family == "Linux"
   
 - name: Download jdk windows
   win_get_url:
