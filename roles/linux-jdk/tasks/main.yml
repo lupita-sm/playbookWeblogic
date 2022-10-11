@@ -3,11 +3,12 @@
 - name: Download jdk linux
   become: true
   get_url: url="https://download.oracle.com/java/19/latest/jdk-19_linux-x64_bin.rpm" dest="/opt/jdk-19_linux-x64_bin.rpm" owner=root group=root
-  when: ansible_os_family == "Linux"
 
 - name: Install with rpm
   become: true
-  command: "rpm -ivh jdk-19_linux-x64_bin.rpm"
+  yum:
+    name: /opt/jdk-19_linux-x64_bin.rpm
+    state: present
 
 #- name: Unarchive tar file
 #  shell: 
