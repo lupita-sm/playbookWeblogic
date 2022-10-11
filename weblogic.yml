@@ -3,13 +3,6 @@
   hosts: weblogic
   #sudo: True
   become: true
-  vars_files:
-    # User defined variables for infrastructure
-    - infra-vars.yml
-    # Common properties. You may not delete this
-    - wls-vars.yml
-    # Infrastructure passwords
-    - secrets.yml
   roles:
     - role: linux-jdk
   pre_tasks:
