@@ -1,5 +1,20 @@
 ---
 # tasks file for linux-jdk
-- name: Download jdk
+- name: Download jdk linux
   get_url: url="https://download.oracle.com/java/19/latest/jdk-19_linux-x64_bin.tar.gz" dest="/etc/jdk-19_linux-x64_bin.tar.gz"
-  #when: mysql_apt_config_check_deb.rc == 1
+  when: ansible_os_family == "Linux"
+
+- name: Unarchive tar file
+  shell: 
+    cmd: 'tar -xvf 6.3.0.7_ITM_AIX_agent_LATAM.tar'
+    chdir: '{{ tmp_path }}'
+    warn: false
+  when: ansible_os_family == "Linux"  
+
+- name: Download jdk windows
+  win_get_url:
+    url: https://download.oracle.com/java/19/latest/jdk-19_windows-x64_bin.msi
+    dest: C:\weblogic-dependencies
+    validate_certs: no
+  #when: java_version['failed'] == true
+  when: ansible_os_family == "Windows"
