@@ -1,18 +1,15 @@
 ---
 - name: Download jdk linux
   become: true
-  get_url: url="https://download.oracle.com/otn/java/jdk/8u202-b08/1961070e4c9b4e26a04e7f5a083f551e/jdk-8u202-linux-x64.rpm" headers='Cookie:oraclelicense=accept-securebackup-cookie' dest="/opt/jdk-8u202-linux-x64.rpm" owner=root group=root
+  get_url: url="https://download.oracle.com/java/19/latest/jdk-19_linux-x64_bin.rpm" dest="/tmp/jdk-19_linux-x64_bin.rpm" owner=root group=root
   when: ansible_os_family == "Linux"
   tags: descarga
 
 - name: Install with rpm
   become: true
-  #yum:
-  #  name: /opt/jdk-19_linux-x64_bin.rpm
-  #  state: present
-  ansible.builtin.shell: 
-    cmd: rpm -ivh /opt/jdk-19_linux-x64_bin.rpm
-    chdir: /opt/
+  yum:
+    name: /tmp/jdk-19_linux-x64_bin.rpm
+    state: present
   
 - name: Download jdk windows
   win_get_url:
