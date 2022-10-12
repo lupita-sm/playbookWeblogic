@@ -5,8 +5,8 @@
     - password.yml 
   roles: 
   - wls-install
-  - domain-install
-  - managedsrv-install
-  - domain2-install
-  - managedsrv2-install
-  - cluster-config
+  #- domain-install
+  #- managedsrv-install
+  #- domain2-install
+  #- managedsrv2-install
+  #- cluster-config
