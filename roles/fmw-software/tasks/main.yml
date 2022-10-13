@@ -6,7 +6,9 @@
 
 # ==> Install Fussion Middleware Infrastructure Software
 - name: Create installer directory
+  become: true
   file: state=directory path={{ mw_installer_folder }}
+  
 - name: Copy Middleware Installer
   copy: src={{ mw_installer }} dest={{ mw_installer_folder }}
 - name: Copy file for silent installation
