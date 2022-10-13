@@ -2,5 +2,6 @@
 - hosts: weblogic
   roles:
   - {role: linux-jdk}
+  - {role: fmw-software}
   - {role: weblogic-installation-linux}
   - {role: weblogic-windows}
