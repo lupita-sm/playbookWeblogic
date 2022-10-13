@@ -1,2 +1,6 @@
----
-# vars file for linux-jdk
+oracle_group: 'oinstall'
+oracle_user: 'oracle'
+oracle_os_user_pass: 'oracle1234'
+jdk_folder: '{{ oracle_base }}/jdk8'
+oracle_base: '/oracle'
+server: '158.98.60.49:9017'

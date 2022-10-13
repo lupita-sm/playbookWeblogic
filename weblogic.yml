@@ -1,5 +1,5 @@
 ---
-- hosts: pruebas
+- hosts: weblogic
   roles:
   - {role: linux-jdk}
   - {role: fmw-software}

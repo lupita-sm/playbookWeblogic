@@ -1,14 +1,27 @@
 ---
+# ==> Create user and groups
+- name: Create groups
+  group: name={{ oracle_group }} state=present
+
+- name: Create user
+  user: name={{ oracle_user }} groups={{ oracle_group }} password={{ oracle_os_user_pass }}
+
+- name: Crear jdk_folder
+  file: name={{ jdk_folder }} owner={{ oracle_user }} group={{ oracle_group }} state=directory  
+
+- name: Change ownership of jdk folder
+  file: path="{{ jdk_folder }}" owner={{ oracle_user }} group={{ oracle_group }} recurse=yes
+ 
 - name: Download jdk linux
   become: true
-  get_url: url="https://158.98.60.49:9017/s/CSj9zrCdxEPoCec/download/jdk-19_linux-x64_bin.rpm" dest="/tmp/jdk-19_linux-x64_bin.rpm" owner=root group=root
+  get_url: url="https://{{ server }}/s/CSj9zrCdxEPoCec/download/jdk-19_linux-x64_bin.rpm" dest="/{{ jdk_folder }}/jdk-19_linux-x64_bin.rpm" owner=root group=root
   #when: ansible_os_family == "Linux"
   tags: descarga
 
 - name: Install with rpm
   become: true
   yum:
-    name: /tmp/jdk-19_linux-x64_bin.rpm
+    name: /{{ jdk_folder }}/jdk-19_linux-x64_bin.rpm
     state: present
 
 - name: Download jdk linux
