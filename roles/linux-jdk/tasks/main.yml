@@ -17,6 +17,3 @@
     - { limit: 'hard', type: nofile, value: '{{ hard_no_file }}' }
     - { limit: 'soft', type: nproc, value: '{{ soft_nproc }}' }
     - { limit: 'hard', type: nproc, value: '{{ hard_nproc }}' }
-
-  shell: rpm -e jdk-19_linux-x64_bin.rpm
-  tags: uninstall
