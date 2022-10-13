@@ -41,7 +41,7 @@
  
 - name: Download jdk linux
   become: true
-  get_url: url="https://{{ server }}/s/qAzgiitjSTybGY8/download/jdk-8u202-linux-x64.rpm" dest="/{{ jdk_folder }}/jdk-8u202-linux-x64.rpm" owner={{ oracle_user }} group={{ oracle_group }}
+  get_url: url="https://{{ server }}/s/qAzgiitjSTybGY8/download/jdk-8u202-linux-x64.rpm" dest="/{{ jdk_folder }}/jdk-8u202-linux-x64.rpm" owner={{ oracle_user }} group={{ oracle_group }} validate_certs=no
   #when: ansible_os_family == "Linux"
   tags: descarga
 
