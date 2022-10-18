@@ -28,4 +28,4 @@ Dependencies
 ------------
 
 * [Ansible Windows Modules](https://galaxy.ansible.com/ansible/windows): Older ansible versions may need the manual install of the windows modules.
-* [Oracle Weblogic server] https://www.oracle.com/middleware/technologies/weblogic-server-installers-downloads.html : Version 12c
+* [Oracle Weblogic server]( https://www.oracle.com/middleware/technologies/weblogic-server-installers-downloads.html ): Version 12c
